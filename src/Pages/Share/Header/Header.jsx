@@ -15,8 +15,8 @@ const Header = () => {
               <li><Link to={'/#contact'}>Contact</Link></li>
             </ul>
           </div>
-          <img className='w-28' src="https://img.freepik.com/free-vector/detailed-chef-logo-template_23-2148987940.jpg?w=740&t=st=1682962415~exp=1682963015~hmac=bcf3e0201b3e5a61add8cf12bc7f7b94cac6c432209742ba6275a3aa3d5e0ce8" alt="" />
-          <img className='w-36' src="https://findvectorlogo.com/wp-content/uploads/2022/02/camp-chef-vector-logo-2022.png" alt="" />
+          <img className='w-24 lg:w-28' src="https://img.freepik.com/free-vector/detailed-chef-logo-template_23-2148987940.jpg?w=740&t=st=1682962415~exp=1682963015~hmac=bcf3e0201b3e5a61add8cf12bc7f7b94cac6c432209742ba6275a3aa3d5e0ce8" alt="" />
+          <img className='w-24 lg:w-36' src="https://findvectorlogo.com/wp-content/uploads/2022/02/camp-chef-vector-logo-2022.png" alt="" />
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
