@@ -1,0 +1,25 @@
+@media only screen and (max-width: 600px) {
+    .sliderImage {
+        width: 260px;
+        height: 245px;
+    }
+    .small{
+        text-align: center;
+    }
+    .sliderImage2{
+        width: 260px;
+        height: 245px;
+    }
+    .textH3{
+        font-size: 30px;
+    }
+    .top{
+        top: 165px;
+    }
+  }
+  @media screen and (max-width: 1250px){
+    .bottom{
+        top: 110px;
+    }
+    
+  }
