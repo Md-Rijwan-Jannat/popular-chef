@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Routes/Provider/AuthProvider/AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Register = () => {
     const [show, setShow] = useState(false)
+    // AuthContext
+    const { user, createUser } = useContext(AuthContext);
 
     // on submit handle 
     const handleSubmit = (event) => {
@@ -14,6 +18,29 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name, photo, email, password)
+        // register
+        createUser(email, password)
+            .then(result => {
+                const signUpUser = result.user;
+                console.log(signUpUser);
+                form.reset('')
+                toast.success('Successfully register');
+            })
+            .catch(error => {
+                console.log(error)
+                toast.error(error.message);
+            })
+        if (password.length < 6) {
+            toast.error('Enter a six character long password')
+            return;
+        }
+        if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
+            toast.error('Please added tow uppercase latter!');
+            return;
+        } else if (!/(?=.*[0-9].*[0-9])/.test(password)) {
+            toast.error('Please inter a tow number');
+            return;
+        }
     }
     return (
         <div className='flex gap-12 justify-center my-7'>
@@ -21,7 +48,7 @@ const Register = () => {
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <form onSubmit={handleSubmit} className="card-body">
                     <div className='text-center'>
-                        <h2 style={{ fontFamily: ' cursive' }} className='text-4xl font-bold my-3 text-red-700 '>You want recipe <br /><span className='text-orange-500'>info, register our side</span> </h2>
+                        <h2 style={{ fontFamily: ' cursive' }} className='text-4xl font-bold my-3 text-red-700 '>You want recipe <br /><span className='text-orange-500'>info register our side</span> </h2>
                         <img className='h-36 border rounded-full shadow-lg' src="https://img.freepik.com/premium-vector/chinese-restaurant-logo-design-template-inspiration-vector-illustration_556641-201.jpg" alt="" />
                     </div>
                     <div className="form-control">

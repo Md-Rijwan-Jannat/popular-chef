@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Routes/Provider/AuthProvider/AuthProvider';
 
 const Header = () => {
+  const {user} = useContext(AuthContext);
     return (
         <div className="navbar bg-base-100 border">
         <div className="navbar-start">
@@ -26,7 +28,9 @@ const Header = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <Link to={'/login'} className="btn bg-red-700 border-none hover:bg-orange-400">Login</Link >
+         {
+          user ? <button className="btn bg-red-700 border-none hover:bg-orange-400">Log out</button> : <Link to={'/login'} className="btn bg-red-700 border-none hover:bg-orange-400">Login</Link >  
+         }
         </div>
       </div>
     );
