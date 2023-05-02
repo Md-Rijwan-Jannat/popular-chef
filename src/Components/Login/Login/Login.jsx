@@ -36,6 +36,7 @@ const Login = () => {
             .then(result => {
                 console.log(result)
                 toast.success('Successfully login')
+                navigate('/')
             })
             .catch(error => {
                 console.log(error)
@@ -48,6 +49,7 @@ const Login = () => {
             .then(result => {
                 console.log(result)
                 toast.success('Successfully login')
+                navigate('/')
             })
             .catch(error => {
                 console.log(error)
