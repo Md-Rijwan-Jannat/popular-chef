@@ -5,7 +5,8 @@ import { AuthContext } from '../../../Routes/Provider/AuthProvider/AuthProvider'
 import toast, { Toaster } from 'react-hot-toast';
 
 const Register = () => {
-    const [show, setShow] = useState(false)
+    const [show, setShow] = useState(false);
+    const [photo, setPhoto] = useState(null)
     // AuthContext
     const { user, createUser } = useContext(AuthContext);
 
@@ -25,20 +26,21 @@ const Register = () => {
                 console.log(signUpUser);
                 form.reset('')
                 toast.success('Successfully register');
+                setPhoto(signUpUser);
             })
             .catch(error => {
                 console.log(error)
                 toast.error(error.message);
             })
         if (password.length < 6) {
-            toast.error('Enter a six character long password')
+            toast.error('The password is less than 6 characters')
             return;
         }
         if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
             toast.error('Please added tow uppercase latter!');
             return;
         } else if (!/(?=.*[0-9].*[0-9])/.test(password)) {
-            toast.error('Please inter a tow number');
+            toast.error('A user cannot submit empty email and password fields');
             return;
         }
     }
