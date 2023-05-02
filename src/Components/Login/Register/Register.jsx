@@ -50,7 +50,7 @@ const Register = () => {
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <form onSubmit={handleSubmit} className="card-body">
                     <div className='text-center'>
-                        <h2 style={{ fontFamily: ' cursive' }} className='text-4xl font-bold my-3 text-red-700 '>You want recipe <br /><span className='text-orange-500'>info register our side</span> </h2>
+                        <h2 style={{ fontFamily: ' cursive' }} className='text-4xl font-bold my-3 text-red-700 '>You want recipe <br /><span className='text-orange-500'>info ! register our side</span> </h2>
                         <img className='h-36 border rounded-full shadow-lg' src="https://img.freepik.com/premium-vector/chinese-restaurant-logo-design-template-inspiration-vector-illustration_556641-201.jpg" alt="" />
                     </div>
                     <div className="form-control">

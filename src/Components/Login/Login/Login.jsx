@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Routes/Provider/AuthProvider/AuthProvider';
 import { toast } from 'react-hot-toast';
 
 const Login = () => {
     const [show, setShow] = useState(false);
+    const navigate = useNavigate();
     // AuthContext
     const { loginUser, googleUser, githubUser } = useContext(AuthContext);
     // on submit handle 
@@ -22,6 +23,7 @@ const Login = () => {
                 console.log(loggedUser);
                 form.reset('')
                 toast.success('Successfully login')
+                navigate('/')
             })
             .catch(error => {
                 console.log(error);
