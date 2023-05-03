@@ -1,12 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Routes/Provider/AuthProvider/AuthProvider';
 import { toast } from 'react-hot-toast';
 
 const Login = () => {
     const [show, setShow] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation()
+    const from = location.state?.from?.pathname || "/";
     // AuthContext
     const { loginUser, googleUser, githubUser } = useContext(AuthContext);
     // on submit handle 
@@ -23,7 +25,7 @@ const Login = () => {
                 console.log(loggedUser);
                 form.reset('')
                 toast.success('Successfully login')
-                navigate('/')
+                navigate(from, {replace:true})
             })
             .catch(error => {
                 console.log(error);

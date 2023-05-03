@@ -8,6 +8,7 @@ import Register from "../../Components/Login/Register/Register";
 import ErrorPage from "../../Components/ErrorPage/ErrorPage";
 import Blog from "../../Pages/Blogs/Blog";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Banner from "../../Components/Banner/Banner";
   
   const router = createBrowserRouter([
     {
@@ -17,7 +18,7 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
       children:[
         {
             path:'/',
-            element: <PrivateRoute><Home/></PrivateRoute>
+            element: <Home/>
         },
         {
             path:'/login',
@@ -30,6 +31,11 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
         {
             path:'/blog',
             element: <Blog/>
+        },
+        {
+            path:'/recipe/:id',
+            element: <PrivateRoute><Banner/></PrivateRoute>,
+            loader: ({params}) => fetch(`http://localhost:5000/chef/${params.id}`)
         },
       ]
     },
