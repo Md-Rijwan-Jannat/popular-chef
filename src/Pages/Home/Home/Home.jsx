@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css'
 import ChefDetails from '../../../Components/ChefDetails/ChefDetails';
+import CarouselFood from '../ExtraSection/CarouselFood/CarouselFood';
 
 const Home = () => {
     const [chefDetails, setChefDetails] = useState([])
@@ -61,6 +62,8 @@ const Home = () => {
                     }
                 </div>
             </div>
+
+            <CarouselFood/>
         </div>
     )
 

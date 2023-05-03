@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaHeart } from 'react-icons/fa';
+import Recipe from '../Recipe/Recipe';
 
 const RecipeBanner = ({ recipeDetails }) => {
     console.log(recipeDetails);
@@ -22,8 +23,13 @@ const RecipeBanner = ({ recipeDetails }) => {
                     </div>
                 </div>
             </div>
-            <div>
-                
+            <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3'>
+                {
+                    recipes.map(rec => <Recipe
+                        key={rec.id}
+                        rec={rec}
+                    ></Recipe>)
+                }
             </div>
         </div>
     );
