@@ -11,15 +11,24 @@
         height: 245px;
     }
     .textH3{
-        font-size: 30px;
+        font-size: 50px;
+    }
+    .textP{
+        font-size: 10px;
     }
     .top{
-        top: 165px;
+        top: 150px;
     }
   }
   @media screen and (max-width: 1250px){
     .bottom{
         top: 110px;
+    }
+    
+  }
+  @media screen and (max-width: 900px){
+    .small{
+        text-align: center;
     }
     
   }

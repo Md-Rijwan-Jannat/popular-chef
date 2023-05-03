@@ -36,6 +36,9 @@ const Header = () => {
       </div>
       <div className="navbar-end">
         {
+          user&& <img className='w-16 md:w-24 rounded-full md:mr-2' src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" alt="" />
+        }
+        {
           user ? <button onClick={logOutHandler } className="btn bg-red-700 border-none hover:bg-orange-400">Log out</button> : <Link to={'/login'} className="btn bg-red-700 border-none hover:bg-orange-400">Login</Link >
         }
       </div>
