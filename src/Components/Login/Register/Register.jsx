@@ -36,10 +36,10 @@ const Register = () => {
             toast.error('The password is less than 6 characters')
             return;
         }
-        if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
+        if (/(?=.*[A-Z].*[A-Z])/.test(password)) {
             toast.error('Please added tow uppercase latter!');
             return;
-        } else if (!/(?=.*[0-9].*[0-9])/.test(password)) {
+        } else if (/(?=.*[0-9].*[0-9])/.test(password)) {
             toast.error('A user cannot submit empty email and password fields');
             return;
         }

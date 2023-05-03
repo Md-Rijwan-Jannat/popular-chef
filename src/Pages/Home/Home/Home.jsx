@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Home.css'
 import ChefDetails from '../../../Components/ChefDetails/ChefDetails';
 import CarouselFood from '../ExtraSection/CarouselFood/CarouselFood';
+import Vigitor from '../ExtraSection/CarouselFood/Vigitor';
 
 const Home = () => {
     const [chefDetails, setChefDetails] = useState([])
@@ -64,6 +65,7 @@ const Home = () => {
             </div>
 
             <CarouselFood/>
+            <Vigitor/>
         </div>
     )
 
