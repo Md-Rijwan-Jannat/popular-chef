@@ -8,7 +8,7 @@ const ChefDetails = ({ chefDetail }) => {
     const { _id, chef_name, chef_picture, likes, recipes, recipes_number, year_of_experience } = chefDetail;
    
     return (
-        <div className=" rounded-xl shadow-lg mb-12 w-96 p-3 mx-5">
+        <div className=" rounded-xl shadow-lg mb-12 w-96 p-2">
             <figure><img className='w-full lg:h-56 lg:w-full xl:h-72 rounded-xl' src={chef_picture} /></figure>
             <div className="p-3">
                 <h1 style={{ fontFamily: 'cursive' }} className='text-3xl font-bold text-red-600'>Mr. {chef_name}</h1>

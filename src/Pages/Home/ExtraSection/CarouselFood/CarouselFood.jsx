@@ -2,7 +2,7 @@ import React from 'react';
 
 const CarouselFood = () => {
     return (
-        <div className='mb-16 grid justify-center'>
+        <div className='mb-16 grid items-center justify-center'>
             <h1 className='text-3xl text-red-600 text-center mb-12 font-semibold'>Food Items</h1>
             <div>
             <button className="btn btn-outline border-none bg-opacity-0 hover:bg-white"> <div className="carousel-item w-1/2">
