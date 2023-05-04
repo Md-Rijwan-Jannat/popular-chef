@@ -95,7 +95,7 @@ const Register = () => {
             </div>
 
             <div className='flex items-center justify-center'>
-                <img style={{ height: '600px', width: '500px' }} src="https://t4.ftcdn.net/jpg/03/31/50/87/360_F_331508755_eDTtcgYlNmjxC7MZIsRgXGsARgkigSaB.jpg" alt="" />
+                <img style={{ height: '500px', width: '400px' }} src="https://t4.ftcdn.net/jpg/03/31/50/87/360_F_331508755_eDTtcgYlNmjxC7MZIsRgXGsARgkigSaB.jpg" alt="" />
             </div>
         </div>
     );

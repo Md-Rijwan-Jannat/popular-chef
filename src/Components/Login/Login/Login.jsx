@@ -62,7 +62,7 @@ const Login = () => {
         <div className='lg:flex gap-12 justify-center my-7'>
 
             <div className='flex items-center justify-center'>
-                <img style={{ height: '500px', width: '500px' }} src="https://static5.depositphotos.com/1036149/436/i/950/depositphotos_4367749-stock-photo-chef-3d-illustration.jpg" alt="" />
+                <img style={{ height: '400px', width: '400px' }} src="https://static5.depositphotos.com/1036149/436/i/950/depositphotos_4367749-stock-photo-chef-3d-illustration.jpg" alt="" />
             </div>
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <form onSubmit={handleSubmit} className="card-body">
