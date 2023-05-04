@@ -19,30 +19,34 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name, photo, email, password)
+        
+        // password validation
+        if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
+            toast.error('Please added tow uppercase latter!')
+            return;
+        } else if (!/(?=.*[0-9].*[0-9])/.test(password)) {
+            toast.error('A user cannot submit empty email and password fields')
+            return;
+        }
+        if (password.length < 8) {
+            toast.error('The password is less than 8 characters')
+            return;
+        }
         // register
         createUser(email, password)
             .then(result => {
                 const signUpUser = result.user;
                 console.log(signUpUser);
+                setPhoto(signUpUser);
                 form.reset('')
                 toast.success('Successfully register');
-                setPhoto(signUpUser);
             })
             .catch(error => {
                 console.log(error)
                 toast.error(error.message);
             })
-        if (password.length < 6) {
-            toast.error('The password is less than 6 characters')
-            return;
-        }
-        if (/(?=.*[A-Z].*[A-Z])/.test(password)) {
-            toast.error('Please added tow uppercase latter!');
-            return;
-        } else if (/(?=.*[0-9].*[0-9])/.test(password)) {
-            toast.error('A user cannot submit empty email and password fields');
-            return;
-        }
+
+
     }
     return (
         <div className='flex gap-12 justify-center my-7'>
