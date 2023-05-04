@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
     const [chefDetails, setChefDetails] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/chef')
+        fetch('https://the-chef-recipe-server-md-rijwan-jannat.vercel.app/chef')
             .then(res => res.json())
             .then(data => setChefDetails(data))
             .catch(error => console.log(error))
