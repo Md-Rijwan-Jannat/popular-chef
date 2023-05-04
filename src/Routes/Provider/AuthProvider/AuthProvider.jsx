@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut,  updateProfile } from "firebase/auth";
 import app from '../../../firebase/firebase.config';
 
 
@@ -36,7 +36,7 @@ const AuthProvider = ({ children }) => {
     }
     // github
     const githubUser = ()=>{
-        setLoading(ture)
+        setLoading(true)
         return signInWithPopup(auth, githubProvider);
     }
     // Obsarve
@@ -49,7 +49,12 @@ const AuthProvider = ({ children }) => {
         return ()=>{
             return unSubscribe();
         }
+
     },[])
+    // 
+    // const updateThing = (name, photo)=>{
+    //     updateProfile(auth.currentUser,name, photo)
+    // }
     const authInfo = {
         user,
         loading,
