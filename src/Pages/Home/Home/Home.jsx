@@ -40,7 +40,7 @@ const Home = () => {
                         <div className="hero-content flex-col md:flex-row-reverse mx-2 lg:mx-24">
                             <img src="https://media.istockphoto.com/id/472324159/vector/excellento.jpg?s=612x612&w=0&k=20&c=5v5j-o4SK6VP0qiuj7mec3nsiFZ1AKpigDgEUmJPe6A=" className="max-w-sm rounded-lg shadow-2xl sliderImage" />
                             <div className='small'>
-                                <h1 style={{ fontFamily: 'cursive' }} className="text-8xl font-bold text-orange-500 textH3">Box Office food <span className='text-red-700'> News!</span></h1>
+                                <h1 style={{ fontFamily: 'cursive' }} className="text-8xl font-bold text-orange-500 textH3">(和食) Showing some traditional<span className='text-red-700'> Japanese cooking.</span></h1>
                                
                                 <button className="btn bg-red-700 border-none my-5 md:my-10 hover:bg-orange-500">Get Started</button>
                                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
