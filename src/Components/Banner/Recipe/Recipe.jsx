@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { toast } from 'react-hot-toast';
-import { FaCheckCircle, FaHeart } from 'react-icons/fa';
+import { FaCheckCircle, FaHeart, FaStar, FaStarHalfAlt } from 'react-icons/fa';
+import Rating from 'react-rating';
 
 const Recipe = ({ rec }) => {
     const { id, cooking_method, ingredients, recipe_name, likes, rating } = rec;
     const [disabledB, setDisabledB] = useState(false)
 
-    const toastHandler = ()=>{
+    const toastHandler = () => {
         toast.success('Add to favorite')
         setDisabledB(true)
     }
@@ -16,7 +17,7 @@ const Recipe = ({ rec }) => {
                 <h2 className="card-title">{recipe_name}</h2>
                 <p>{cooking_method}</p>
                 <div>
-                        <h3 className='text-xl'>Ingredients</h3>
+                    <h3 className='text-xl'>Ingredients</h3>
                     <div className='pl-3'>
                         {
                             ingredients.map((list) => <ol>
@@ -32,16 +33,17 @@ const Recipe = ({ rec }) => {
                         <span className='font-semibold text-orange-500 pb-1'><small>{likes}</small></span>
                     </div>
                 </div>
-                <div className="rating">
-                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
-                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                    <p className='ml-2'>{rating}</p>
+                <div className='flex items-center'>
+                    <Rating className='pt-1 flex items-center'
+                        placeholderRating={rating}
+                        emptySymbol={<FaStarHalfAlt className="icon text-yellow-500" />}
+                        placeholderSymbol={<FaStar className="icon text-yellow-500" />}
+                        fullSymbol={<FaStar className="icon text-yellow-500" />}
+                    ></Rating>
+                    <p className='ml-4'>{rating}</p>
                 </div>
                 <div className="card-actions mt-3">
-                    <button onClick={toastHandler}  disabled={disabledB}  className="btn btn-primary w-full bg-orange-500 hover:bg-red-600 border-none">Favorite</button>
+                    <button onClick={toastHandler} disabled={disabledB} className="btn btn-primary w-full bg-orange-500 hover:bg-red-600 border-none">Favorite</button>
                 </div>
             </div>
         </div>

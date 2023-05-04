@@ -41,7 +41,7 @@ const Header = () => {
             <div>
             <img className='rounded-lg transition duration-500 ease-in-out transform hover:scale-110 w-16 md:w-24 md:mr-2' src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" alt="" />
           </div>
-          <div className='absolute bottom-0 left-0 right-0  p-2 text-black text-center opacity-0 transition duration-300 ease-in-out group-hover:opacity-100'>
+          <div className='absolute bottom-0 left-0 right-0 mt-5  text-black font-semibold p-3 w-full text-center opacity-0 transition duration-300 ease-in-out group-hover:opacity-100'>
             <p>{user?.email}</p>
           </div>
           </div>

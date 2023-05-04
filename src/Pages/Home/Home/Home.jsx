@@ -3,6 +3,7 @@ import './Home.css'
 import ChefDetails from '../../../Components/ChefDetails/ChefDetails';
 import CarouselFood from '../ExtraSection/CarouselFood/CarouselFood';
 import Vigitor from '../ExtraSection/CarouselFood/Vigitor';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [chefDetails, setChefDetails] = useState([])
@@ -25,7 +26,7 @@ const Home = () => {
                             <div className='small'>
                                 <h1 style={{ fontFamily: 'cursive' }} className="text-8xl font-bold text-orange-500 textH3 ">Welcome to Japanese <span className='text-red-700'>cuisine food!</span></h1>
                                 
-                                <button className="btn bg-red-700 border-none my-5 md:my-10">Get Started</button>
+                                <Link to={'/register'} className="btn bg-red-700 border-none my-5 md:my-10">Get Started</Link >
                                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                                     <a href="#slide4" className="btn btn-circle bg-opacity-10">❮</a>
                                     <a href="#slide2" className="btn btn-circle bg-opacity-10">❯</a>

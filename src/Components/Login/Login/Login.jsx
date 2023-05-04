@@ -38,7 +38,7 @@ const Login = () => {
             .then(result => {
                 console.log(result)
                 toast.success('Successfully login')
-                navigate('/')
+                navigate(from, {replace:true})
             })
             .catch(error => {
                 console.log(error)
@@ -51,7 +51,7 @@ const Login = () => {
             .then(result => {
                 console.log(result)
                 toast.success('Successfully login')
-                navigate('/')
+                navigate(from, {replace:true})
             })
             .catch(error => {
                 console.log(error)
@@ -61,7 +61,7 @@ const Login = () => {
     return (
         <div className='flex gap-12 justify-center my-7'>
 
-            <div>
+            <div className='flex items-center justify-center'>
                 <img style={{ height: '500px', width: '500px' }} src="https://static5.depositphotos.com/1036149/436/i/950/depositphotos_4367749-stock-photo-chef-3d-illustration.jpg" alt="" />
             </div>
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
