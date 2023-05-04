@@ -59,7 +59,7 @@ const Login = () => {
             })
     }
     return (
-        <div className='flex gap-12 justify-center my-7'>
+        <div className='lg:flex gap-12 justify-center my-7'>
 
             <div className='flex items-center justify-center'>
                 <img style={{ height: '500px', width: '500px' }} src="https://static5.depositphotos.com/1036149/436/i/950/depositphotos_4367749-stock-photo-chef-3d-illustration.jpg" alt="" />

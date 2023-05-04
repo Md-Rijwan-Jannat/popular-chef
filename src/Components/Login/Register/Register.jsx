@@ -49,9 +49,9 @@ const Register = () => {
 
     }
     return (
-        <div className='flex gap-12 justify-center my-7'>
+        <div className='lg:flex gap-12 justify-center my-7'>
 
-            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <div className="card flex-shrink-0 justify-center w-full max-w-sm shadow-2xl bg-base-100">
                 <form onSubmit={handleSubmit} className="card-body">
                     <div className='text-center'>
                         <h2 style={{ fontFamily: ' cursive' }} className='text-4xl font-bold my-3 text-red-700 '>You want recipe <br /><span className='text-orange-500'>info ! register our side</span> </h2>
