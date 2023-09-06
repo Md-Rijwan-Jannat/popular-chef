@@ -2,10 +2,11 @@ import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import Header from '../../Pages/Share/Header/Header';
 import Footer from '../../Pages/Share/Footer/Footer';
+import Container from '../../Components/Container/Container';
 
 const Main = () => {
     return (
-        <div>
+        <Container>
             <Header />
             <Outlet />
             <div className="flex items-center justify-center btm-nav w-3/4 mr-5 lg:ml-0 lg:w-full">
@@ -21,7 +22,7 @@ const Main = () => {
             </div>
 
             <Footer />
-        </div>
+        </Container>
     );
 };
 
