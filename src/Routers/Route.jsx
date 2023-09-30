@@ -1,17 +1,14 @@
-import {
-  createBrowserRouter,
-} from "react-router-dom";
-import Main from "../../Layout/Main/Main";
-// import Home from "../../Pages/Home/Home/Home";
-import Login from "../../Components/Login/Login/Login";
-import Register from "../../Components/Login/Register/Register";
-import ErrorPage from "../../Components/ErrorPage/ErrorPage";
-import Blog from "../../Pages/Blogs/Blog";
-import PrivateRoute from "../PrivateRoute/PrivateRoute";
-import Banner from "../../Components/Banner/Banner";
+import {createBrowserRouter,} from "react-router-dom";
+import Main from "../Layout/Main/Main";
+import ErrorPage from "../Components/ErrorPage/ErrorPage";
+import Blog from "../Pages/Blogs/Blog";
+import Banner from "../Components/Banner/Banner";
+import SignUp from "../Components/Register/SignUp/SignUp";
 import React from "react";
+import Login from "../Components/Register/Login/Login";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
-const Home = React.lazy(() => import ('../../Pages/Home/Home/Home'))
+const Home = React.lazy(() => import ('../Pages/Home/Home/Home'))
 const router = createBrowserRouter([
   {
     path: "/",
@@ -28,7 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/register',
-        element: <React.Suspense fallback={<div className="h-96 flex justify-center items-center"><progress className="progress w-56"></progress></div>}><Register /></React.Suspense>
+        element: <React.Suspense fallback={<div className="h-96 flex justify-center items-center"><progress className="progress w-56"></progress></div>}><SignUp /></React.Suspense>
       },
       {
         path: '/blog',

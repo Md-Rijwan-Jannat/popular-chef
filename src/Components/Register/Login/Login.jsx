@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../../Routes/Provider/AuthProvider/AuthProvider';
 import { toast } from 'react-hot-toast';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const Login = () => {
     const [show, setShow] = useState(false);
@@ -59,16 +59,16 @@ const Login = () => {
             })
     }
     return (
-        <div className='lg:flex gap-12 justify-center my-7'>
+        <div className='lg:flex w-full justify-items-center items-center h-full my-5'>
 
-            <div className='flex items-center justify-center'>
-                <img style={{ height: '400px', width: '400px' }} src="https://static5.depositphotos.com/1036149/436/i/950/depositphotos_4367749-stock-photo-chef-3d-illustration.jpg" alt="" />
+            <div className='lg:w-1/2 flex justify-items-center items-center'>
+                <img className='w-1/2 ' src="https://static5.depositphotos.com/1036149/436/i/950/depositphotos_4367749-stock-photo-chef-3d-illustration.jpg" alt="" />
             </div>
-            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                <form onSubmit={handleSubmit} className="card-body">
-                    <div className='text-center'>
+            <div className="lg:w-1/2 shadow-2xl bg-base-100">
+                <form onSubmit={handleSubmit} className="p-8">
+                    <div className='text-center flex flex-col items-center justify-items-center'>
                         <h2 style={{ fontFamily: ' cursive' }} className='text-4xl font-bold my-3 text-red-700 '>Please Login and <br /><span className='text-orange-500'> see our recipe</span> </h2>
-                        <img className='h-36 border rounded-full shadow-lg' src="https://img.freepik.com/premium-vector/chinese-restaurant-logo-design-template-inspiration-vector-illustration_556641-201.jpg" alt="" />
+                        <img className='w-[200px] border rounded-full shadow-lg' src="https://img.freepik.com/premium-vector/chinese-restaurant-logo-design-template-inspiration-vector-illustration_556641-201.jpg" alt="" />
                     </div>
                     <div className="form-control">
                         <label className="label">
@@ -93,11 +93,11 @@ const Login = () => {
                     </div>
                 </form>
 
-                <p className='px-7 pb-5'><small>You have't account? please <b> <u className='text-blue-500'><Link to={'/register'}>register</Link></u></b></small></p>
                 <div className='px-5'>
                     <button onClick={googleHandler} className="w-full btn my-2 btn-outline hover:bg-blue-300 hover:border-none border-blue-300"><img className='w-10 rounded-full pr-1' src="https://companieslogo.com/img/orig/GOOG-0ed88f7c.png?t=1633218227" alt="" /> continue with github</button>
                     <button onClick={githubHandler} className="w-full btn my-2 btn-outline"><img className='w-12 pr-1' src="https://pngimg.com/uploads/github/github_PNG40.png" alt="" /> continue with github</button>
                 </div>
+                <p className='text-center text-lg text-gray-700 my-5'><small>You have't account? please <b> <u className='text-blue-500'><Link to={'/register'}>register</Link></u></b></small></p>
 
             </div>
         </div>
